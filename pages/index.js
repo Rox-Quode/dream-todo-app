@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import productivity from '../public/productivity.svg';
+import { LoginButton } from '../components/LoginButton';
 
 export default function Home() {
   return (
@@ -23,12 +24,7 @@ export default function Home() {
                     Your dream life starts with crushing your tomorrow&apos;s goals!
                   </p>
                   <div className="flex flex-row justify-center gap-x-4 mt-4 text-violet-900">
-                    <div className="border border-violet-900 p-4 rounded-lg text-lg cursor-pointer hover:text-violet-600">
-                    Sign In
-                    </div>
-                  <div className="border border-violet-900 p-4 rounded-lg text-lg cursor-pointer hover:text-violet-600">
-                    Sign Up
-                  </div>
+                      <LoginButton />
                   </div>
                 </div>
                 <div className="flex flex-row gap-x-4">
