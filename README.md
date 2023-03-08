@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project created by following the [Getti
 
 ## Work in Progress...
 
-So far, I've completed the Getting Started, Basic Functionality sections, Adding Next Auth and SSR & API endpoints. Since I'm also getting more familiar with Tailwind, I've played around with customizing the project a bit.
+So far, I've completed the Getting Started, Basic Functionality sections and Adding Next Auth. Since I'm also getting more familiar with Tailwind, I've played around with customizing the project a bit.
 
 
 
