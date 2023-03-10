@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import { authOptions } from "pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth/next";
-import { add } from "date-fns";
 import { TodoRow } from '../components/TodoRow';
 import { AddItem } from '../components/Additem';
 import { LogoutButton } from '../components/LogoutButton';
+import { useRouter } from "next/router";
+import clientPromise from "@/lib/mongodb";
 
 
 export async function getServerSideProps(context) {
@@ -24,45 +25,22 @@ export async function getServerSideProps(context) {
         };
     }
 
-    const todos = [
-        {
-            id: "dmoa40s",
-            description: "Learn Next.js",
-            priority: 5,
-            dueDate: `${add(new Date(), {days: 14})}`,
-        },
-        {
-            id: "kdolr6s",
-            description: "Go grocery shopping",
-            priority: 4,
-            dueDate: `${new Date()}`,
-        },
-        {
-            id: "s0mahg32",
-            description: "Apply to job",
-            priority: 3,
-            dueDate: `${add(new Date(), {days: 3})}`,
-        },
-        {
-            id: "39cmabb53",
-            description: "Groom the dog",
-            priority: 2,
-            dueDate: `${add(new Date(), {days: 4})}`,
-        },
-        {
-            id: "dsmc350s",
-            description: "Go to gym",
-            priority: 1,
-            dueDate: `${add(new Date(), {days: 2})}`,
-        },
-    ];
+    const client = await clientPromise;
+    const dbResult = await client
+      .db("test")
+      .collection("users")
+      .findOne({ email: session.user.email }, { projection: { todos: 1 } });
 
-    return { props: { todos } };
+    return { props: { todos: dbResult.todos ?? [] } };
 }
 
   
-export default function Dashboard({todos}) {
-    console.log(todos);
+export default function Dashboard({ todos }) {
+  const router = useRouter();
+  const refreshData = () => {
+    router.replace(router.asPath);
+  };
+
   return (
     <>
       <Head>
@@ -73,15 +51,15 @@ export default function Dashboard({todos}) {
       </Head>                         
         <main className="bg-zinc-200">
             <div className="container mx-auto flex flex-col p-6 min-h-[100vh] gap-y-6 max-w-4xl">
-                <div className="flex flex-row justify-between text-center">
-                    <div className="text-5xl font-bold text-slate-700">
+                <div className="sm:flex sm:flex-col md:flex md:flex-row justify-between text-center">
+                    <div className="text-5xl font-bold text-slate-700 xs:mb-8 md:mb-0">
                         Your Dream To-dos 🌠
                     </div>
-                <div>
+                    <div className="xs:flex xs:justify-center">
                     <LogoutButton />
                     </div>    
                 </div>
-                <AddItem />
+                <AddItem refreshData={refreshData} />
                 <div className="overflow-hidden overflow-x-auto rounded-lg border border-violet-900">
                     <table className="table-auto min-w-full divide-y divide-violet-900 text-sm">
                         <thead className="bg-gray-100">
@@ -99,10 +77,7 @@ export default function Dashboard({todos}) {
                         </thead>
                         <tbody className="divide-y divide-violet-800">
                             {todos.map((todo) => (
-                                // <div key={todo.id}>
-                                //     {todo.description}
-                                // </div>
-                                <TodoRow key={todo.id} todo={todo} />
+                                <TodoRow key={todo.id} todo={todo} refreshData={refreshData} />
                             ))}
                         </tbody>
                     </table>

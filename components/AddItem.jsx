@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { PriorityPicker } from "./PriorityPicker";
 import { format } from "date-fns";
+import { v4 as uuidv4 } from "uuid";
 
-export function AddItem() {
+export function AddItem({ refreshData }) {
   const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState(2);
-  const [dueDate, setDueDate] = useState(format(new Date(), "yyyy-MM-dd"));
+  const [priority, setPriority] = useState(null);
+  const [dueDate, setDueDate] = useState(format(new Date(), "dd/MM/yyyy"));
 
   const onAddItem = () => {
     fetch("api/add-item", {
       method: "POST",
-      body: JSON.stringify({ description, priority, dueDate }),
+      body: JSON.stringify({ id: uuidv4(), description, priority, dueDate }),
     }).then(() => {
       setDescription("");
-      setPriority(2);
-      setDueDate(format(new Date(), "yyyy-MM-dd"));
+      setPriority(0);
+      setDueDate(format(new Date(), "dd/MM/yyyy"));
+      refreshData();
     });
   };
 
@@ -27,13 +29,13 @@ export function AddItem() {
         <input
           type="text"
           id="description"
-          placeholder="Fuel Space Ship"
+          placeholder="Add awesome activity"
           className="w-full rounded-md border-gray-200 py-2.5 pr-10 sm:text-sm"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />
 
-        <div className="flex gap-x-4 items-center">
+        <div className="xs:flex xs:flex-col sm:flex-row gap-x-4 items-center">
           <PriorityPicker priority={priority} setPriority={setPriority} />
           <label htmlFor="dueDate" className="sr-only">
             Due Date
@@ -43,14 +45,14 @@ export function AddItem() {
             id="dueDate"
             name="dueDate"
             value={dueDate}
-            min={format(new Date(), "yyyy-MM-dd")}
+            min={format(new Date(), "dd/MM/yyyy")}
             className="w-full rounded-md border-gray-200 py-2.5 pr-10 sm:text-sm"
             onChange={(e) => setDueDate(e.target.value)}
           ></input>
-          <div className="w-12 place-content-center">
+          <div className="w-12 place-content-center xs:mt-2 sm:mt-0">
             <button
               type="button"
-              className="rounded-full bg-sky-600 p-0.5 text-white hover:bg-sky-700"
+              className="rounded-full bg-violet-900 p-0.5 text-white hover:bg-violet-700"
               onClick={onAddItem}
             >
               <span className="sr-only">Submit</span>

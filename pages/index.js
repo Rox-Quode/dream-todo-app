@@ -1,10 +1,27 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from "react";
 import productivity from '../public/productivity.svg';
 import { LoginButton } from '../components/LoginButton';
 
 export default function Home() {
+  let localStorageConsent;
+  const [cookiesAccepted, setCookiesAccepted] = useState(true);
+
+  useEffect(() => {
+    setCookiesAccepted(localStorageConsent);
+  }, [localStorageConsent]);
+
+  if (typeof window !== "undefined") {
+    localStorageConsent = window.localStorage.getItem("cookies-accepted");
+  }
+
+  const acceptCookies = () => {
+    localStorageConsent = window.localStorage.setItem("cookies-accepted", true);
+    setCookiesAccepted(true);
+  };
+
   return (
     <>
       <Head>
@@ -14,7 +31,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600">
-            <div className="container mx-auto flex flex-col items-center p-6 min-h-[100vh] gap-y-16">
+            <div className="container mx-auto flex flex-col items-center p-6 min-h-[100vh] gap-y-14">
                 <h1 className="text-5xl text-center font-bold text-indigo-900 mt-6">
                 Dream To-Dos
                 </h1>
@@ -35,6 +52,18 @@ export default function Home() {
                     Blog
                   </Link>
                 </div>
+                {cookiesAccepted === null && (
+                <div className="absolute bottom-0 flex flex-row justify-center text-center bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-4 w-full">
+                  Please{" "}
+                  <span
+                    className="text-violet-900 cursor-pointer hover:text-violet-700 font-bold"
+                    onClick={acceptCookies}
+                  >
+                    &nbsp;accept cookies
+                  </span>
+                  , we&apos;ll be nice, we promise! 🤭
+                </div>
+              )}
             </div>
         </main>
     </>
