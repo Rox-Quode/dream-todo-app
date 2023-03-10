@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import clock from '../public/clock.svg';
+import winning from '../public/winning.svg';
 
 export default function About() {
   return (
@@ -17,7 +17,7 @@ export default function About() {
                 <h1 className="text-5xl text-center font-bold text-indigo-900 mt-6">
                 About this app
                 </h1>
-                <Image src={clock} className="w-[300px]" alt="clock image" />
+                <Image src={winning} className="w-[300px]" alt="ranking 1st image" />
                 <div className="xl:w-6/12 sm:w-9/12 text-center">
                     <p className="text-lg">
                       When you have a do-to list that&apos;s practical and looks this beautiful, you&apos;ll enjoy checking in with your goals daily. This app will help you create your dream life!
