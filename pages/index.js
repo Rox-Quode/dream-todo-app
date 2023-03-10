@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from "react";
-import productivity from '../public/productivity.svg';
+import winning from '../public/winning.svg';
 import { LoginButton } from '../components/LoginButton';
 
 export default function Home() {
@@ -31,16 +31,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600">
-            <div className="container mx-auto flex flex-col items-center p-6 min-h-[100vh] gap-y-14">
+            <div className="container mx-auto flex flex-col items-center p-2 min-h-[100vh] gap-y-14">
                 <h1 className="text-5xl text-center font-bold text-indigo-900 mt-6">
                 Dream To-Dos
                 </h1>
-                <Image src={productivity} className="w-[300px]" alt="productivity image" />
-                <div className="xl:w-6/12 sm:w-9/12 text-center">
-                  <p className="text-lg">
+                <Image src={winning} className="w-[300px]" alt="girl working on laptop image" />
+                <div className="sm:w-6/12 xs:w-full text-center">
+                  <p className="text-lg ">
                     Your dream life starts with crushing your tomorrow&apos;s goals!
                   </p>
-                  <div className="flex flex-row justify-center gap-x-4 mt-4 text-violet-900">
+                  <div className="flex flex-row justify-center mt-8 text-violet-900">
                       <LoginButton />
                   </div>
                 </div>
@@ -52,11 +52,12 @@ export default function Home() {
                     Blog
                   </Link>
                 </div>
-                {cookiesAccepted === null && (
-                <div className="absolute bottom-0 flex flex-row justify-center text-center bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-4 w-full">
+              </div>
+              {cookiesAccepted === null && (
+                <div className="sticky bottom-0 grid-flow-row justify-center text-center bg-zinc-200 bg-opacity-80 p-6 w-full">
                   Please{" "}
                   <span
-                    className="text-violet-900 cursor-pointer hover:text-violet-700 font-bold"
+                    className="text-violet-900 cursor-pointer p-0 hover:text-violet-700 font-bold"
                     onClick={acceptCookies}
                   >
                     &nbsp;accept cookies
@@ -64,7 +65,6 @@ export default function Home() {
                   , we&apos;ll be nice, we promise! 🤭
                 </div>
               )}
-            </div>
         </main>
     </>
   );

@@ -12,11 +12,11 @@ export default function Blog() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <main className=" bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600">
-            <div className="container mx-auto flex flex-col items-center p-6 min-h-[100vh] gap-y-16">                         
+            <div className="container mx-auto flex flex-col items-center p-2 min-h-[100vh] gap-y-16">                         
                 <h1 className="text-5xl text-center font-bold text-indigo-900 mt-6">
                     Inspiring blog page
                 </h1>
-                <div className="xl:w-6/12 sm:w-9/12 text-center">
+                <div className="sm:w-6/12 xs:w-full text-center">
                     <p className="text-lg">
                     Stay tuned for productivity tips that help you achieve your goals!
                     </p> 
