@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { authOptions } from "pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth/next";
 import { TodoRow } from '../components/TodoRow';
-import { AddItem } from '../components/Additem';
+import { AddItem } from '../components/AddItem';
 import { LogoutButton } from '../components/LogoutButton';
 import { useRouter } from "next/router";
 import clientPromise from "@/lib/mongodb";
