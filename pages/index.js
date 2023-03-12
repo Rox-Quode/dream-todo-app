@@ -54,7 +54,7 @@ export default function Home() {
                 </div>
               </div>
               {cookiesAccepted === null && (
-                <div className="sticky bottom-0 grid-flow-row justify-center text-center bg-zinc-200 bg-opacity-80 p-6 w-full">
+                <div className="fixed bottom-0 grid-flow-row justify-center text-center bg-zinc-200 bg-opacity-80 p-6 w-full">
                   Please{" "}
                   <span
                     className="text-violet-900 cursor-pointer p-0 hover:text-violet-700 font-bold"
