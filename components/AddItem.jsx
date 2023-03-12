@@ -35,7 +35,7 @@ export function AddItem({ refreshData }) {
           value={description}
         />
 
-        <div className="xs:flex xs:flex-col sm:flex-row gap-x-4 items-center">
+        <div className="xs:flex xs:flex-col sm:flex-row gap-x-4 xs:gap-y-3 items-center">
           <PriorityPicker priority={priority} setPriority={setPriority} />
           <label htmlFor="dueDate" className="sr-only">
             Due Date
@@ -45,11 +45,11 @@ export function AddItem({ refreshData }) {
             id="dueDate"
             name="dueDate"
             value={dueDate}
+            placeholder="Pick date 📅"
             min={format(new Date(), "dd/MM/yyyy")}
-            placeholder="pick date here📅"
             className="w-full rounded-md border-gray-200 py-2.5 xs:pr-2 sm:pr-6 sm:text-sm"
             onChange={(e) => setDueDate(e.target.value)}
-          ></input>
+          />
           <div className="w-12 place-content-center xs:mt-2 sm:mt-0">
             <button
               type="button"
