@@ -45,7 +45,6 @@ export function AddItem({ refreshData }) {
             id="dueDate"
             name="dueDate"
             value={dueDate}
-            placeholder="Pick date 📅"
             min={format(new Date(), "dd/MM/yyyy")}
             className="w-full rounded-md border-gray-200 py-2.5 xs:pr-2 sm:pr-6 sm:text-sm"
             onChange={(e) => setDueDate(e.target.value)}

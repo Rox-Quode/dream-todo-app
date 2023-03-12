@@ -22,7 +22,7 @@ export async function getStaticProps() {
         </Head>
         <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600">
           <div className="container mx-auto flex flex-col items-center p-6 min-h-[100vh] gap-y-6">
-            <h1 className="text-5xl text-center font-bold text-slate-900 mb-10">Blog</h1>
+            <h1 className="text-5xl text-center font-bold text-slate-900 mb-20">Blog</h1>
             <div className="w-full max-w-3xl">
                 {allPostsData.map(({ id, date, title }) => (
                 <div key={id} className="flex flex-row justify-between">
@@ -30,13 +30,13 @@ export async function getStaticProps() {
                     href={`blog/${id}`}
                     className="text-2xl text-violet-900 font-bold pb-4 inline-block hover:text-violet-700  cursor-pointer"
                     >
-                    {title} {"=>"}
+                    {title} {"➡️"}
                     </Link>
-                    <div className="text-slate-700 pb-4 inline-block">{date}</div>
+                    <div className="text-slate-800 pb-4 inline-block">{date}</div>
                 </div>
                 ))}
             </div>
-            <div className="flex flex-row gap-x-4">
+            <div className="flex flex-row gap-x-4 mt-20">
                 <Link href="/" className="hover:text-violet-900">
                 Home
                 </Link>
