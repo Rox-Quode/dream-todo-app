@@ -18,9 +18,11 @@ export function TodoRow({ todo, refreshData }) {
       <td className="whitespace-nowrap px-4 py-2 text-slate-700">
         <PriorityPill priority={todo.priority} />
       </td>
-      <td className="whitespace-nowrap px-4 py-2 text-slate-700 flex flex-row justify-between">
+      <td className="whitespace-nowrap px-4 py-2 text-slate-700 ">
         <span>{format(new Date(todo.dueDate), "dd/MM/yyyy")}</span>
-        <span onClick={() => deleteTodo(todo)} className="cursor-pointer">
+      </td>
+      <td className="whitespace-nowrap px-4 py-2 text-slate-700">
+      <span onClick={() => deleteTodo(todo)} className="cursor-pointer">
           🗑
         </span>
       </td>

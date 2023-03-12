@@ -74,6 +74,9 @@ export default function Dashboard({ todos }) {
                             <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-lg text-gray-900">
                             📅 Due
                             </th>
+                            <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-lg text-gray-900">
+                            ✔️
+                            </th>
                         </tr>
                         </thead>
                         <tbody className="divide-y divide-violet-800">
