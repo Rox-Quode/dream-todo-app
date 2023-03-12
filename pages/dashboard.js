@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from "next/link";
 import { authOptions } from "pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth/next";
 import { TodoRow } from '../components/TodoRow';
@@ -86,6 +87,17 @@ export default function Dashboard({ todos }) {
                     <div className="text-2xl">Status</div>
                     <div>You have {todos.length} to-dos on your list!</div>
                 </div>
+                <div className="flex flex-row gap-x-4 mt-20 items-center mx-auto">
+                  <Link href="/" className="hover:text-violet-900">
+                  Home
+                  </Link>
+                  <Link href="/about" className="hover:text-violet-900">
+                    About
+                  </Link>
+                  <Link href="/blog" className="hover:text-violet-900">
+                    Blog
+                  </Link>
+                 </div>
             </div>
         </main>
     </>
