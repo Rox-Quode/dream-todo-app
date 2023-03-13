@@ -34,7 +34,6 @@ export default function Post({ postData }) {
        <h1 className="text-5xl text-center font-bold text-slate-900">
           {postData.title}
         </h1>
-
         <div className="w-full max-w-3xl">
           <div
             className="prose lg:prose-xl prose-slate text-slate-800"

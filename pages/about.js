@@ -23,7 +23,7 @@ export default function About() {
                       When you have a do-to list that&apos;s practical and looks this beautiful, you&apos;ll enjoy checking in with your goals daily. This app will help you create your dream life!
                     </p> 
                 </div>
-                <div className="flex flex-row gap-x-4">
+                <div className="flex flex-row gap-x-4 absolute bottom-4">
                     <Link href="/" className="hover:text-violet-900">
                     Home
                     </Link>

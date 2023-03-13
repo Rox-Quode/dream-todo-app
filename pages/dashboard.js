@@ -90,7 +90,7 @@ export default function Dashboard({ todos }) {
                     <div className="text-2xl">Status</div>
                     <div>You have {todos.length} to-dos on your list!</div>
                 </div>
-                <div className="flex flex-row gap-x-4 mt-20 items-center mx-auto">
+                <div className="flex flex-row gap-x-4 mt-10 absolute bottom-4 place-self-center">
                   <Link href="/" className="hover:text-violet-900">
                   Home
                   </Link>

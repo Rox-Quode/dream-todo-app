@@ -22,7 +22,8 @@ export async function getStaticProps() {
         </Head>
         <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600">
           <div className="container mx-auto flex flex-col items-center pt-6 min-h-[100vh] gap-y-6">
-            <h1 className="text-5xl text-center font-bold text-indigo-900 mb-20">Blog</h1>
+            <h1 className="text-5xl text-center font-bold text-indigo-900 mb-10">Blog</h1>
+            <p className="text-xl text-center text-slate-800 mb-10">Coffee-powered blog entries for maximum productivity☕</p>
             <div className="w-full max-w-3xl">
                 {allPostsData.map(({ id, date, title}) => (
                 <div key={id} className="sm:flex sm:flex-row xs:flex xs:flex-col justify-between">
@@ -36,7 +37,7 @@ export async function getStaticProps() {
                 </div>
                 ))}
             </div>
-            <div className="flex flex-row gap-x-4 mt-20">
+            <div className="flex flex-row gap-x-4 mt-10 absolute bottom-4">
                 <Link href="/" className="hover:text-violet-900">
                 Home
                 </Link>

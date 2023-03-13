@@ -38,13 +38,13 @@ export default function Home() {
                 <Image src={winning} className="w-[300px]" alt="girl working on laptop image" />
                 <div className="sm:w-6/12 xs:w-full text-center">
                   <p className="text-lg ">
-                    Your dream life starts with crushing your tomorrow&apos;s goals!
+                    To start crushing your dream life goals, go to your to-do dashboard:
                   </p>
                   <div className="flex flex-row justify-center mt-8 text-violet-900">
                       <LoginButton />
                   </div>
                 </div>
-                <div className="flex flex-row gap-x-4">
+                <div className="flex flex-row gap-x-4 absolute bottom-4">
                   <Link href="/about" className="hover:text-violet-900">
                     About
                   </Link>
