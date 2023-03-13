@@ -50,7 +50,7 @@ export default function Dashboard({ todos }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>                         
-        <main className="bg-zinc-200">
+        <main className="bg-zinc-200 relative">
             <div className="container mx-auto flex flex-col p-6 min-h-[100vh] gap-y-6 max-w-4xl">
                 <div className="sm:flex sm:flex-col md:flex md:flex-row justify-between text-center">
                     <div className="text-5xl font-bold text-slate-700 xs:mb-8 md:mb-0">

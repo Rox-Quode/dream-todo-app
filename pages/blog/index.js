@@ -20,7 +20,7 @@ export async function getStaticProps() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600">
+        <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 relative">
           <div className="container mx-auto flex flex-col items-center pt-6 min-h-[100vh] gap-y-6">
             <h1 className="text-5xl text-center font-bold text-indigo-900 mb-10">Blog</h1>
             <p className="text-xl text-center text-slate-800 mb-10">Coffee-powered blog entries for maximum productivity☕</p>

@@ -12,7 +12,7 @@ export default function About() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>                         
-        <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600">
+        <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600 relative">
             <div className="container mx-auto flex flex-col items-center p-2 min-h-[100vh] gap-y-16">
                 <h1 className="text-5xl text-center font-bold text-indigo-900 mt-6">
                 About this app
