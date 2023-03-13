@@ -50,7 +50,7 @@ export default function Dashboard({ todos }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>                         
-        <main className="bg-zinc-200 relative">
+        <main className="bg-zinc-200">
             <div className="container mx-auto flex flex-col p-6 min-h-[100vh] gap-y-6 max-w-4xl">
                 <div className="sm:flex sm:flex-col md:flex md:flex-row justify-between text-center">
                     <div className="text-5xl font-bold text-slate-700 xs:mb-8 md:mb-0">
@@ -90,7 +90,7 @@ export default function Dashboard({ todos }) {
                     <div className="text-2xl">Status</div>
                     <div>You have {todos.length} to-dos on your list!</div>
                 </div>
-                <div className="flex flex-row gap-x-4 mt-10 absolute bottom-4 place-self-center">
+                <div className="flex flex-row gap-x-4 mt-10 items-center mx-auto">
                   <Link href="/" className="hover:text-violet-900">
                   Home
                   </Link>
