@@ -30,7 +30,7 @@ export default function Post({ postData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-gradient-to-tr from-green-300 via-blue-500 to-purple-600">
-       <div className="container mx-auto flex flex-col items-center p-6 min-h-[100vh] gap-y-6">
+       <div className="container mx-auto flex flex-col items-center pt-6 min-h-[100vh] gap-y-6">
        <h1 className="text-5xl text-center font-bold text-slate-900">
           {postData.title}
         </h1>
@@ -40,7 +40,7 @@ export default function Post({ postData }) {
             className="prose lg:prose-xl prose-slate text-slate-800"
             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
-          <div className="border-2 border-violet-800 w-fit rounded px-4 py-2 mt-4 text-violet-800 hover:border-violet-900 hover:text-violet-900 cursor-pointer">
+          <div className="border-2 border-violet-800 w-fit rounded px-4 py-2 mt-10 text-violet-800 hover:border-violet-900 hover:text-violet-900 cursor-pointer">
             <Link href="/blog">{"<"} Back</Link>
           </div>
         </div>

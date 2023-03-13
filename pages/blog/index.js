@@ -24,13 +24,13 @@ export async function getStaticProps() {
           <div className="container mx-auto flex flex-col items-center pt-6 min-h-[100vh] gap-y-6">
             <h1 className="text-5xl text-center font-bold text-indigo-900 mb-20">Blog</h1>
             <div className="w-full max-w-3xl">
-                {allPostsData.map(({ id, date, title }) => (
+                {allPostsData.map(({ id, date, title}) => (
                 <div key={id} className="sm:flex sm:flex-row xs:flex xs:flex-col justify-between">
                     <Link
                     href={`blog/${id}`}
                     className="text-2xl text-violet-900 font-bold pb-4 inline-block hover:text-violet-700  cursor-pointer"
                     >
-                    {title} {">"}
+                    {title} 
                     </Link>
                     <div className="text-slate-800 pb-4 inline-block">{date}</div>
                 </div>
